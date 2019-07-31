@@ -84,6 +84,20 @@ open class MultiSlider: UIControl {
             repositionThumbViews()
         }
     }
+    
+    @objc open dynamic var fontColor: UIColor = .black {
+        didSet {
+            invalidateIntrinsicContentSize()
+            repositionThumbViews()
+        }
+    }
+    
+    @objc open dynamic var fontFamily: UIFont = UIFont.systemFont(ofSize: 12) {
+        didSet {
+            invalidateIntrinsicContentSize()
+            repositionThumbViews()
+        }
+    }
 
     /// track color before first thumb and after last thumb. `nil` means to use the tintColor, like the rest of the track.
     @IBInspectable open dynamic var outerTrackColor: UIColor? {

@@ -145,6 +145,9 @@ extension MultiSlider {
         guard valueLabelPosition != .notAnAttribute else { return }
         let valueLabel = UITextField()
         valueLabel.borderStyle = .none
+        valueLabel.textAlignment = .center
+        valueLabel.font = fontFamily
+        valueLabel.textColor = fontColor
         slideView.addSubview(valueLabel)
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         let thumbView = thumbViews[i]
@@ -165,7 +168,7 @@ extension MultiSlider {
         } else {
             labelValue = value[i]
         }
-        valueLabels[i].text = valueLabelFormatter.string(from: NSNumber(value: Double(labelValue)))
+        valueLabels[i].text = valueLabelFormatter.string(from: NSNumber(value: Int(labelValue)))
     }
 
     func updateValueCount(_ count: Int) {
